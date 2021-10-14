@@ -4,10 +4,10 @@ import csv
 
 
 def find_books(): 
-    with open('result.csv', 'w', newline='',encoding='utf-8') as myFile:
-        fieldNames = ['title', 'author', 'rating', 'format', 'price']
-        theWriter = csv.DictWriter(myFile, fieldnames=fieldNames)
-        theWriter.writeheader()
+    with open('result.csv', 'w', newline='',encoding='utf-8') as my_file:
+        field_names = ['title', 'author', 'rating', 'format', 'price']
+        the_writer = csv.DictWriter(my_file, fieldnames=field_names)
+        the_writer.writeheader()
         
         page = 1
         while True:
@@ -53,7 +53,7 @@ def find_books():
                             new_price = 'Unavailable'                    
                     
                     #Write a new row
-                    theWriter.writerow({'title': book_name, 'author': author_name, 'rating' : num_stars, 'format' : format_, 'price' : new_price})
+                    the_writer.writerow({'title': book_name, 'author': author_name, 'rating' : num_stars, 'format' : format_, 'price' : new_price})
                     
                 page += 1
             else:
@@ -61,8 +61,8 @@ def find_books():
             
 def calculate_price(price_string):
     int_ = int(price_string.split(',')[0])
-    decimal_ = int(price_string.split(',')[1])
-    price = int_ + decimal_/100
+    decimal = int(price_string.split(',')[1])
+    price = int_ + decimal/100
     return price
     
 
