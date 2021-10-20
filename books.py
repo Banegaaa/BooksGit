@@ -6,6 +6,7 @@ import os
 
 CSV_FILE_LOC = os.environ.get('CSV_FILE_LOCATION')
 
+categories = {"TGI" : "1709", "TTT" : "1842", "ECE" : "1792", "ETE" : "1777", "OTAS" : "1855", "MEM" : "1754"}
 
 class BadCategoryException(Exception):
     pass
@@ -17,16 +18,12 @@ def find_books(category, search_term):
         the_writer = csv.DictWriter(my_file, fieldnames=field_names)
         the_writer.writeheader()
 
-        if category == "TGI":
-            category_code = 1709
-        elif category == "TTT":
-            category_code = 1842
-        else:
+        if category not in categories:
             raise BadCategoryException
 
         page = 1
         while True:
-            url = "https://www.bookdepository.com/search?searchTerm={}&category={}&page={}".format(search_term, str(category_code), str(page))
+            url = "https://www.bookdepository.com/search?searchTerm={}&category={}&page={}".format(search_term, categories[category], str(page))
         
             html_text = requests.get(url).text
             soup = BeautifulSoup(html_text, 'lxml')
@@ -60,10 +57,10 @@ def find_books(category, search_term):
                     old_price = book.find('span', class_='rrp')
                     discount = book.find('p', class_='price-save')
                     if old_price:
-                        new_price = round(calculate_price(old_price.text.split()[0]) - calculate_price(discount.text.split()[1]),2)
+                        new_price = round(float(old_price.text.split()[0].replace(",", ".")) - float(discount.text.split()[1].replace(",", ".")), 2)
                     else:
                         if price:
-                            new_price = round(calculate_price(price.text.strip().split()[0]),2)
+                            new_price = round(float(price.text.strip().split()[0].replace(",", ".")), 2)
                         else:
                             new_price = 'Unavailable'                    
                     
@@ -75,19 +72,28 @@ def find_books(category, search_term):
                 break
 
 
-def calculate_price(price_string):
-    int_ = int(price_string.split(',')[0])
-    decimal = int(price_string.split(',')[1])
-    price = int_ + decimal/100
-    return price
-    
+def print_categories():
+    print("Categories:")
+    print("     - TGI - Technology: General issues")
+    print("     - TTT - Transport Technology & Trades")
+    print("     - ECE - Electronics & Communications Engineering")
+    print("     - ETE - Energy Technology & Engineering")
+    print("     - OTAS - Other Technologies & Applied Sciences")
+    print("     - MEM - Mechanical Engineering & Materials")
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("-c", dest="category", required=True, help="Category for search")
-    parser.add_argument("-s", dest="search_term", required=True, help="Search term")
+    parser.add_argument("-lc", dest="flag", action="store_const", const=True, default=False, help="All categories")
+    parser.add_argument("-c", dest="category", help="Category for search")
+    parser.add_argument("-s", dest="search_term", help="Search term")
     args = parser.parse_args()
-    try:
-        find_books(args.category, args.search_term)
-    except BadCategoryException:
-        print("Invalid category selected")
+    if args.flag and not(args.category and args.search_term):
+        print_categories()
+    elif args.category and args.search_term and not args.flag:
+        try:
+            find_books(args.category, args.search_term)
+        except BadCategoryException:
+            print("Invalid category selected")
+    else:
+        print("Invalid instruction")
