@@ -1,47 +1,90 @@
 title,rating,price
-Machine Learning Guide for Oil and Gas Using Python,5,96.68
-Machine Learning and Deep Learning Using Python and Tensorflow,0,91.5
-Programming the Intel Edison: Getting Started with Processing and Python,4.5,17.44
-Computational Nuclear Engineering and Radiological Science Using Python,3,78.57
-Python 3,0,45.8
-Nonlinear Digital Filtering with Python,3,85.8
-Understanding Optics with Python,4.5,144.09
-Reliability Analysis Using MINITAB and Python,0,100.31
-Introduction to Machine Learning in the Cloud with Python,0,68.71
+Modeling Techniques in Predictive Analytics with Python and R,4,65.33
+Elementary Mechanics Using Python,2.5,56.69
+Python Programming and Numerical Methods,0,57.85
+Learning Python,0,15.56
+Python Programming,0,13.05
+Learning Python,0,29.77
+Python Programming Crash Course,0,36.1
+Python Crash Course,0,24.5
+Python Programming Crash Course,0,28.75
+Python for Data Analysis,0,26.93
+Learn Python Programming for Beginners,0,21.19
+Python Programming for Beginners,0,19.22
+Python for Data Analysis,0,20.47
+Python Programming for Beginners,0,26.05
+Python for Data Analysis,0,21.26
+Python fur Ingenieure fur Dummies,0,31.59
 Simulating Nonlinear Circuits with Python Power Electronics,0,126.84
 Simulating Nonlinear Circuits with Python Power Electronics,0,101.19
-Programar la Raspberry Pi con Python,0,34.14
-Codey-B y El Codigo Python,0,13.96
+Dynamic System Modeling and Analysis with MATLAB and Python,0,115.01
+Computación matemática con Python : introducción al lenguaje Python para científicos e ingenieros,0,39.05
 Digital Filter Design using Python for Power Engineering Applications,5,78.7
-Image Operators,3,118.19
-Photovoltaik fur Ingenieure,0,23.24
-The Rare Metals War,4,21.24
-The Rare Metals War,4,22.15
-Analog Electronics with Op-amps,4,109.61
-Fuel Field Manual: Sources and Solutions to Performance Problems,0,50.21
+"Statistical Quality Control: Using MINITAB, R, JMP and Python",0,98.84
+Machine Learning,0,26.48
+Fine-Kinney-Based Fuzzy Multi-criteria Occupational Risk Assessment,0,85.85
+Introduction to Deep Learning for Engineers,0,51.16
+Introduction to Deep Learning for Engineers,0,40.6
+Fine-Kinney-Based Fuzzy Multi-criteria Occupational Risk Assessment,0,104.66
+Model-Based Reinforcement Learning,0,115.01
+Machine Learning,0,36.22
+Machine Learning,0,41.92
+Machine Learning,0,31.94
+Machine Learning,0,36.22
+Marketing Data Science,4,Unavailable
+Elastic wave propagation in transversely isotropic media,0,90.59
 "NALCO Champion Fuel Field Manual, Third Edition",0,109.57
 Issues of Fault Diagnosis for Dynamic Systems,0,225.58
-Security of Self-Organizing Networks,0,142.24
-Robust Model-Based Fault Diagnosis for Dynamic Systems,0,350.99
+Preventive Maintenance,4,107.14
 Eigenstructure Assignment for Control System Design,0,251.22
+Natural Rubber Materials,0,213.46
+Natural Rubber Materials,0,488.07
+Nanotechnology for Environmental Remediation,0,135.03
+Optical Interconnects for Data Centers,0,214.32
+Polyoxomolybdates as Green Catalysts for Aerobic Oxidation,0,36.34
+"Fault Detection II, Aerospace, Marine Systems: Volume P",0,135.57
+Natural Rubber Materials,0,215.4
+"Starch, Chitin and Chitosan Based Composites and Nanocomposites",0,64.49
+Resin Transfer Moulding for Aerospace Structures,0,244.98
+Check Dam Construction for Sustainable Watershed Management and Planning,0,152.96
 Model-based Fault Diagnosis in Dynamic Systems Using Identification Techniques,0,196.2
 "Internet of Things, Smart Computing and Technology: A Roadmap Ahead",0,121.09
+Model-based Fault Diagnosis in Dynamic Systems Using Identification Techniques,0,129.67
 "Internet of Things, Smart Computing and Technology: A Roadmap Ahead",0,123.99
-Applied Machine Learning for Smart Data Analysis,0,124.27
-Machine Intelligence and Data Analytics for Sustainable Future Smart Cities,0,124.6
-Python 3,0,Unavailable
-Analog Electronics with Op-amps,4,Unavailable
-Petroleum Exploration Opportunities in Africa and Countries beyond,0,Unavailable
-"Probability, Random Variables, and Random Signal Principles",4,Unavailable
-"Probability, Random Variables and Random Signal Principles",4,Unavailable
-Communication System Principles,3.5,Unavailable
-"Probability, Random Variables, and Random Signal Principles",4,Unavailable
-Principles of Electrical Engineering: Overhead Transparency Masters,0,Unavailable
-Principles of Electrical Engineering,3,Unavailable
+"Biomimetic, Bio-inspired and Self-Assembled Materials for Engineered Surfaces and Applications: Volume 1498",0,46.37
+Polymer Research in Microgravity,0,258.69
+Preventive Maintenance,4,Unavailable
+Python Machine Learning,0,Unavailable
+Python for Beginners,0,Unavailable
+Restorative Dental Materials,4,Unavailable
+Materials in Industry,0,Unavailable
+Materials in Industry,1,Unavailable
+Python for Beginners,0,Unavailable
+Maintainability & Maintenance Management,0,Unavailable
+Artificial Intelligence Book,0,Unavailable
+Elastic wave propagation in transversely isotropic media,0,Unavailable
+Fault Diagnosis in Dynamic Systems,3,Unavailable
+Machine Learning With Python,0,Unavailable
+Elastic Wave Propagation in Transversely Isotropic Media,0,Unavailable
+Machine Learning With Python,4.5,Unavailable
+Coastal Processes in Tideless Seas,0,Unavailable
+Keras Python,0,Unavailable
+Biopolymer Nanocomposites,0,Unavailable
+Machine Learning,0,Unavailable
+Python for Beginners,0,Unavailable
+Keras Python,0,Unavailable
 "Power Systems, Biotechnological Processes, Fault Detection I: Beijing, PRC, 5-9 July 1999 14th",0,Unavailable
-Ondeo Nalco Fuel Field Manual,0,Unavailable
-Nuclear Reactor Physics Experiments,0,Unavailable
-"Probability, Random Variables and Random Signal Principles",4,Unavailable
-"Probability, Random Variables, and Random Signal Principles",4,Unavailable
-Principles of Electrical Engineering: Solutions Manual with Disk,0,Unavailable
-Corrosion,0,Unavailable
+"Concrete Mix Design, Quality Control and Specification",5,Unavailable
+Machine Learning With Python,4.5,Unavailable
+Keras Class,0,Unavailable
+Kinematics 2/E,0,Unavailable
+Mechanical Power Transmission,0,Unavailable
+Artificial Intelligence Book,0,Unavailable
+Learn Keras Step By Step,0,Unavailable
+Python for Beginners,0,Unavailable
+Machine Learning,0,Unavailable
+Python Programming Language,0,Unavailable
+Handbook of the Operation of Small Wind Turbines on a Utility Distribution System,0,Unavailable
+Model-Based Fault Diagnosis in Dynamic Systems Using Identification Techniques,0,Unavailable
+Statistical Quality Control,0,Unavailable
+Learn Keras Step By Step,0,Unavailable

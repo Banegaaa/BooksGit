@@ -6,24 +6,31 @@ import os
 
 CSV_FILE_LOC = os.environ.get('CSV_FILE_LOCATION')
 
-categories = {"TGI" : "1709", "TTT" : "1842", "ECE" : "1792", "ETE" : "1777", "OTAS" : "1855", "MEM" : "1754"}
+categories = {"TGI": {"code": "1709", "description": "Technology: General issues"},
+              "TTT": {"code": "1842", "description": "Transport Technology & Trades"},
+              "ECE": {"code": "1792", "description": "Electronics & Communications Engineering"},
+              "ETE": {"code": "1777", "description": "Energy Technology & Engineering"},
+              "OTAS": {"code": "1855", "description": "Other Technologies & Applied Sciences"},
+              "MEM": {"code": "1754", "description": "Mechanical Engineering & Materials"}
+              }
+
 
 class BadCategoryException(Exception):
     pass
 
 
 def find_books(category, search_term):
+    if category not in categories:
+        raise BadCategoryException
+
     with open(CSV_FILE_LOC, 'w', newline='', encoding='utf-8') as my_file:
         field_names = ['title', 'rating', 'price']
         the_writer = csv.DictWriter(my_file, fieldnames=field_names)
         the_writer.writeheader()
 
-        if category not in categories:
-            raise BadCategoryException
-
         page = 1
         while True:
-            url = "https://www.bookdepository.com/search?searchTerm={}&category={}&page={}".format(search_term, categories[category], str(page))
+            url = "https://www.bookdepository.com/search?searchTerm={}&category={}&page={}".format(search_term, categories[category]["code"], str(page))
         
             html_text = requests.get(url).text
             soup = BeautifulSoup(html_text, 'lxml')
@@ -31,7 +38,6 @@ def find_books(category, search_term):
             books = soup.find_all('div', class_="book-item")
             
             if books:
-                
                 for book in books:
                     # Scraping the title
                     book_name = book.find('h3', class_='title').text.strip()
@@ -74,12 +80,8 @@ def find_books(category, search_term):
 
 def print_categories():
     print("Categories:")
-    print("     - TGI - Technology: General issues")
-    print("     - TTT - Transport Technology & Trades")
-    print("     - ECE - Electronics & Communications Engineering")
-    print("     - ETE - Energy Technology & Engineering")
-    print("     - OTAS - Other Technologies & Applied Sciences")
-    print("     - MEM - Mechanical Engineering & Materials")
+    for key in categories.keys():
+        print("- ", key, " - ", categories[key]["description"])
 
 
 if __name__ == '__main__':
@@ -88,12 +90,15 @@ if __name__ == '__main__':
     parser.add_argument("-c", dest="category", help="Category for search")
     parser.add_argument("-s", dest="search_term", help="Search term")
     args = parser.parse_args()
-    if args.flag and not(args.category and args.search_term):
+    if args.flag:
         print_categories()
-    elif args.category and args.search_term and not args.flag:
+        exit(0)
+
+    elif args.category and args.search_term:
         try:
             find_books(args.category, args.search_term)
         except BadCategoryException:
             print("Invalid category selected")
+
     else:
         print("Invalid instruction")
